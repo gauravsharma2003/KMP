@@ -1,0 +1,794 @@
+[
+    {
+      "puzzle_id": 1,
+      "three": "ten",
+      "four": "tend",
+      "five": "trend",
+      "4hint": "\"Care for a garden or a helping hand\"",
+      "5hint": "\"Fashion's fleeting favorite or a hot topic on social media.\""
+    },
+    {
+      "puzzle_id": 2,
+      "three": "fat",
+      "four": "flat",
+      "five": "float",
+      "4hint": "\"Level ground where a ball won't roll away\"",
+      "5hint": "\"Bob on water like a carefree cork\""
+    },
+    {
+      "puzzle_id": 3,
+      "three": "cat",
+      "four": "cast",
+      "five": "coast",
+      "4hint": "\"Actors rehearse to perfect this ensemble action.\"",
+      "5hint": "\"Where the land gently kisses the sea.\""
+    },
+    {
+      "puzzle_id": 4,
+      "three": "far",
+      "four": "fair",
+      "five": "flair",
+      "4hint": "\"Where justice wears a balanced scale\"",
+      "5hint": "\"Natural talent that adds a touch of pizzazz\""
+    },
+    {
+      "puzzle_id": 5,
+      "three": "log",
+      "four": "long",
+      "five": "along",
+      "4hint": "\"Measured in miles, not inches\"",
+      "5hint": "\"Beside you on a journey, side by side.\""
+    },
+    {
+      "puzzle_id": 6,
+      "three": "ooh",
+      "four": "pooh",
+      "five": "pooch",
+      "4hint": "\"Bear that loves honey and resides in the Hundred Acre Wood.\"",
+      "5hint": "\"Furry friend wagging its tail on a walk\""
+    },
+    {
+      "puzzle_id": 7,
+      "three": "ear",
+      "four": "rear",
+      "five": "rearm",
+      "4hint": "\"Where a car's taillights are found\"",
+      "5hint": "\"Prepare anew for battle or defense.\""
+    },
+    {
+      "puzzle_id": 8,
+      "three": "ate",
+      "four": "late",
+      "five": "latte",
+      "4hint": "\"After the clock strikes, you might be this for a meeting.\"",
+      "5hint": "\"Coffee's frothy companion, often artfully decorated.\""
+    },
+    {
+      "puzzle_id": 9,
+      "three": "sin",
+      "four": "sing",
+      "five": "swing",
+      "4hint": "\"Express yourself with melody and lyrics.\"",
+      "5hint": "\"Where playgrounds meet rhythm and motion\""
+    },
+    {
+      "puzzle_id": 10,
+      "three": "ire",
+      "four": "fire",
+      "five": "afire",
+      "4hint": "\"Hot element that dances and crackles in a hearth\"",
+      "5hint": "\"Engulfed in flames, burning brightly\""
+    },
+    {
+      "puzzle_id": 11,
+      "three": "fee",
+      "four": "free",
+      "five": "freed",
+      "4hint": "\"Costless, like a bird released from its cage\"",
+      "5hint": "\"Released from chains or constraints\""
+    },
+    {
+      "puzzle_id": 12,
+      "three": "led",
+      "four": "lead",
+      "five": "plead",
+      "4hint": "\"Heavy metal that guides the way\"",
+      "5hint": "\"Begging for mercy in a courtroom drama\""
+    },
+    {
+      "puzzle_id": 13,
+      "three": "use",
+      "four": "user",
+      "five": "usher",
+      "4hint": "\"One who logs in to navigate the digital world\"",
+      "5hint": "\"Guide who leads you to your seat at events\""
+    },
+    {
+      "puzzle_id": 14,
+      "three": "pin",
+      "four": "pain",
+      "five": "plain",
+      "4hint": "\"A four-letter word that often follows 'growing'\"",
+      "5hint": "\"Where the buffalo roam and the sky stretches wide\""
+    },
+    {
+      "puzzle_id": 15,
+      "three": "yea",
+      "four": "year",
+      "five": "yearn",
+      "4hint": "\"365 days in a row\"",
+      "5hint": "\"Long for something with deep desire.\""
+    },
+    {
+      "puzzle_id": 16,
+      "three": "par",
+      "four": "park",
+      "five": "parka",
+      "4hint": "\"Place where cars rest or kids play\"",
+      "5hint": "\"Cozy outerwear for snowball fights and icy winds\""
+    },
+    {
+      "puzzle_id": 17,
+      "three": "pan",
+      "four": "pain",
+      "five": "paint",
+      "4hint": "\"What you might feel after a stubbed toe.\"",
+      "5hint": "\"Colorful coat for walls or canvas\""
+    },
+    {
+      "puzzle_id": 18,
+      "three": "men",
+      "four": "mean",
+      "five": "meant",
+      "4hint": "\"Unkind or average, depends on context!\"",
+      "5hint": "\"Destined or intended, but not said aloud\""
+    },
+    {
+      "puzzle_id": 19,
+      "three": "eat",
+      "four": "east",
+      "five": "yeast",
+      "4hint": "\"Where the sun rises in the morning sky\"",
+      "5hint": "\"Baker's secret to rising success\""
+    },
+    {
+      "puzzle_id": 20,
+      "three": "sue",
+      "four": "sure",
+      "five": "surer",
+      "4hint": "\"Confident answer often paired with 'thing'\"",
+      "5hint": "\"More confident than before, but not the most.\""
+    },
+    {
+      "puzzle_id": 21,
+      "three": "are",
+      "four": "rare",
+      "five": "rarer",
+      "4hint": "\"A steak cooked just past mooing.\"",
+      "5hint": "\"Less common than its counterpart, often sought in steak orders.\""
+    },
+    {
+      "puzzle_id": 22,
+      "three": "all",
+      "four": "tall",
+      "five": "tally",
+      "4hint": "\"Reaches for the sky, much like a giraffe.\"",
+      "5hint": "\"Keep track of points or scores with this counting method.\""
+    },
+    {
+      "puzzle_id": 23,
+      "three": "ail",
+      "four": "fail",
+      "five": "flail",
+      "4hint": "\"Opposite of succeed in a task or test\"",
+      "5hint": "\"Wildly wave your arms like you're trying to fly\""
+    },
+    {
+      "puzzle_id": 24,
+      "three": "god",
+      "four": "good",
+      "five": "goody",
+      "4hint": "\"Opposite of bad, often used to describe a moral action or quality\"",
+      "5hint": "\"Treat often found in a party bag or a grandma's jar.\""
+    },
+    {
+      "puzzle_id": 25,
+      "three": "hem",
+      "four": "them",
+      "five": "theme",
+      "4hint": "\"Pronoun for a group not including you\"",
+      "5hint": "\"Central idea of a party or story\""
+    },
+    {
+      "puzzle_id": 26,
+      "three": "tam",
+      "four": "team",
+      "five": "steam",
+      "4hint": "\"Together Everyone Achieves More\"",
+      "5hint": "\"Rising mist from a boiling pot\""
+    },
+    {
+      "puzzle_id": 27,
+      "three": "ted",
+      "four": "tend",
+      "five": "trend",
+      "4hint": "\"Care for or look after something with attention\"",
+      "5hint": "\"Popular direction in fashion or social media\""
+    },
+    {
+      "puzzle_id": 28,
+      "three": "ten",
+      "four": "tend",
+      "five": "trend",
+      "4hint": "\"Care for a garden or a wound\"",
+      "5hint": "\"What's hot and often set by influencers?\""
+    },
+    {
+      "puzzle_id": 29,
+      "three": "wit",
+      "four": "wait",
+      "five": "waist",
+      "4hint": "\"Time's companion when patience is tested\"",
+      "5hint": "\"The part you cinch with a belt\""
+    },
+    {
+      "puzzle_id": 30,
+      "three": "she",
+      "four": "shed",
+      "five": "shied",
+      "4hint": "\"Where tools find shelter and secrets are stored.\"",
+      "5hint": "\"Stepped back in hesitation or fear\""
+    },
+    {
+      "puzzle_id": 31,
+      "three": "par",
+      "four": "part",
+      "five": "party",
+      "4hint": "\"Role in a play or a piece of the whole\"",
+      "5hint": "\"Festive gathering with music, friends, and cake.\""
+    },
+    {
+      "puzzle_id": 32,
+      "three": "tam",
+      "four": "team",
+      "five": "steam",
+      "4hint": "\"Group that achieves more together than alone\"",
+      "5hint": "\"Hot mist rising from your morning cup\""
+    },
+    {
+      "puzzle_id": 33,
+      "three": "elf",
+      "four": "self",
+      "five": "shelf",
+      "4hint": "\"Reflected in the mirror, but not a twin.\"",
+      "5hint": "\"Where books find a resting place\""
+    },
+    {
+      "puzzle_id": 34,
+      "three": "how",
+      "four": "show",
+      "five": "shown",
+      "4hint": "\"Where actors take the stage and curtains rise\"",
+      "5hint": "\"Revealed to the audience, like a movie on a screen\""
+    },
+    {
+      "puzzle_id": 35,
+      "three": "ice",
+      "four": "nice",
+      "five": "niece",
+      "4hint": "\"Four-letter adjective for being pleasant or kind.\"",
+      "5hint": "\"Sister's daughter, often a favorite at family gatherings\""
+    },
+    {
+      "puzzle_id": 36,
+      "three": "hat",
+      "four": "what",
+      "five": "wheat",
+      "4hint": "\"Word that starts questions seeking answers\"",
+      "5hint": "\"Grain often found in fields and on your breakfast table.\""
+    },
+    {
+      "puzzle_id": 37,
+      "three": "cod",
+      "four": "cold",
+      "five": "could",
+      "4hint": "\"Chilly feeling when you need a sweater\"",
+      "5hint": "\"Potential action hiding in a polite question\""
+    },
+    {
+      "puzzle_id": 38,
+      "three": "coo",
+      "four": "cook",
+      "five": "crook",
+      "4hint": "\"Transform raw ingredients into a delicious masterpiece\"",
+      "5hint": "\"A bent stick or a shady character.\""
+    },
+    {
+      "puzzle_id": 39,
+      "three": "pat",
+      "four": "part",
+      "five": "apart",
+      "4hint": "\"A piece of the whole puzzle.\"",
+      "5hint": "\"Separated like puzzle pieces before they fit together\""
+    },
+    {
+      "puzzle_id": 40,
+      "three": "buy",
+      "four": "busy",
+      "five": "bushy",
+      "4hint": "\"Juggling tasks like a circus performer\"",
+      "5hint": "\"Thick and full, like a squirrel's tail or a dense garden.\""
+    },
+    {
+      "puzzle_id": 41,
+      "three": "dad",
+      "four": "dead",
+      "five": "dread",
+      "4hint": "\"Not alive, but still remembered in stories\"",
+      "5hint": "\"Feeling before a horror movie starts.\""
+    },
+    {
+      "puzzle_id": 42,
+      "three": "fir",
+      "four": "fair",
+      "five": "fairy",
+      "4hint": "\"A place for rides, games, and cotton candy delight.\"",
+      "5hint": "\"Magical creature with wings, often found in enchanted forests.\""
+    },
+    {
+      "puzzle_id": 43,
+      "three": "rat",
+      "four": "rate",
+      "five": "grate",
+      "4hint": "\"How you might score a movie out of ten\"",
+      "5hint": "\"Tool that shreds cheese to bits\""
+    },
+    {
+      "puzzle_id": 44,
+      "three": "men",
+      "four": "mean",
+      "five": "meant",
+      "4hint": "\"Intentions behind actions, or a math average\"",
+      "5hint": "\"Intended outcome of a plan or statement\""
+    },
+    {
+      "puzzle_id": 45,
+      "three": "use",
+      "four": "user",
+      "five": "usher",
+      "4hint": "\"One who logs into a digital world\"",
+      "5hint": "\"Guides you to your seat at a theater\""
+    },
+    {
+      "puzzle_id": 46,
+      "three": "any",
+      "four": "many",
+      "five": "manly",
+      "4hint": "\"Infinite grains in a desert\"",
+      "5hint": "\"Strong and rugged like a lumberjack's handshake.\""
+    },
+    {
+      "puzzle_id": 47,
+      "three": "tee",
+      "four": "tree",
+      "five": "three",
+      "4hint": "\"Nature's skyscraper with branches and leaves\"",
+      "5hint": "\"A trio typically forms this number.\""
+    },
+    {
+      "puzzle_id": 48,
+      "three": "act",
+      "four": "fact",
+      "five": "facet",
+      "4hint": "\"Undeniable truth or detail, often checked by journalists.\"",
+      "5hint": "\"One side of a gem's story\""
+    },
+    {
+      "puzzle_id": 49,
+      "three": "ore",
+      "four": "fore",
+      "five": "force",
+      "4hint": "\"Shouted warning on a golf course\"",
+      "5hint": "\"May the _____ be with you, as in a famous sci-fi saga.\""
+    },
+    {
+      "puzzle_id": 50,
+      "three": "tea",
+      "four": "team",
+      "five": "steam",
+      "4hint": "\"Group effort makes the dream work\"",
+      "5hint": "\"Hot mist that powers old locomotives\""
+    },
+    {
+      "puzzle_id": 51,
+      "three": "rig",
+      "four": "ring",
+      "five": "bring",
+      "4hint": "\"A sound that signals someone's at the door or on the phone\"",
+      "5hint": "\"Deliver or carry something to someone or somewhere\""
+    },
+    {
+      "puzzle_id": 52,
+      "three": "cop",
+      "four": "cope",
+      "five": "coupe",
+      "4hint": "\"Handle life's challenges with grace and resilience\"",
+      "5hint": "\"Two-door ride with a sporty vibe\""
+    },
+    {
+      "puzzle_id": 53,
+      "three": "ore",
+      "four": "fore",
+      "five": "force",
+      "4hint": "\"Golfers shout this to warn of a flying ball!\"",
+      "5hint": "\"May the ______ be with you, as said in a galaxy far, far away.\""
+    },
+    {
+      "puzzle_id": 54,
+      "three": "sea",
+      "four": "seat",
+      "five": "sweat",
+      "4hint": "\"Where you park yourself during a show\"",
+      "5hint": "\"Drips during a workout, keeps you cool\""
+    },
+    {
+      "puzzle_id": 55,
+      "three": "boo",
+      "four": "book",
+      "five": "brook",
+      "4hint": "\"Pages that tell tales or teach lessons\"",
+      "5hint": "\"Small stream that babbles through the forest.\""
+    },
+    {
+      "puzzle_id": 56,
+      "three": "fat",
+      "four": "flat",
+      "five": "float",
+      "4hint": "\"Level ground where wheels roll smoothly\"",
+      "5hint": "\"Effortlessly defying gravity on water or in the air\""
+    },
+    {
+      "puzzle_id": 57,
+      "three": "sea",
+      "four": "seat",
+      "five": "sweat",
+      "4hint": "\"Where royalty rests or passengers buckle up.\"",
+      "5hint": "\"Beads on your brow during a workout\""
+    },
+    {
+      "puzzle_id": 58,
+      "three": "gin",
+      "four": "gain",
+      "five": "again",
+      "4hint": "\"Progress in the right direction, or muscle after a workout\"",
+      "5hint": "\"Once more, with feeling!\""
+    },
+    {
+      "puzzle_id": 59,
+      "three": "sop",
+      "four": "stop",
+      "five": "stoop",
+      "4hint": "\"Red sign signaling a pause in motion\"",
+      "5hint": "\"Where you might sit and watch the world go by outside your home.\""
+    },
+    {
+      "puzzle_id": 60,
+      "three": "lad",
+      "four": "lead",
+      "five": "plead",
+      "4hint": "\"Heavy metal that also guides the way.\"",
+      "5hint": "\"Beg for mercy in a courtroom\""
+    },
+    {
+      "puzzle_id": 61,
+      "three": "sty",
+      "four": "stay",
+      "five": "stray",
+      "4hint": "\"Pause your journey, but don't unpack your bags.\"",
+      "5hint": "\"Wander off the beaten path\""
+    },
+    {
+      "puzzle_id": 62,
+      "three": "ale",
+      "four": "able",
+      "five": "table",
+      "4hint": "\"Having the skill to accomplish tasks\"",
+      "5hint": "\"Where meals gather and stories unfold\""
+    },
+    {
+      "puzzle_id": 63,
+      "three": "sat",
+      "four": "seat",
+      "five": "sweat",
+      "4hint": "\"Where you rest during a musical chairs game\"",
+      "5hint": "\"Drips during a workout session\""
+    },
+    {
+      "puzzle_id": 64,
+      "three": "sat",
+      "four": "seat",
+      "five": "sweat",
+      "4hint": "\"Where you rest during a musical chair game\"",
+      "5hint": "\"Perspiration from a workout session\""
+    },
+    {
+      "puzzle_id": 65,
+      "three": "ate",
+      "four": "late",
+      "five": "plate",
+      "4hint": "\"Behind schedule, but fashionably so\"",
+      "5hint": "\"Where your meal takes a seat at the table\""
+    },
+    {
+      "puzzle_id": 66,
+      "three": "pry",
+      "four": "pray",
+      "five": "spray",
+      "4hint": "\"Whispered wish aimed skyward during moments of reflection.\"",
+      "5hint": "\"A misty burst from a nozzle or ocean wave.\""
+    },
+    {
+      "puzzle_id": 67,
+      "three": "pin",
+      "four": "pain",
+      "five": "paint",
+      "4hint": "\"What you feel when you stub your toe.\"",
+      "5hint": "\"Colorful liquid artists use to transform blank canvases\""
+    },
+    {
+      "puzzle_id": 68,
+      "three": "cot",
+      "four": "cost",
+      "five": "coast",
+      "4hint": "\"What you pay when you shop 'til you drop\"",
+      "5hint": "\"Where land meets the ocean's embrace.\""
+    },
+    {
+      "puzzle_id": 69,
+      "three": "hit",
+      "four": "hist",
+      "five": "heist",
+      "4hint": "\"Whispered sound in a quiet library.\"",
+      "5hint": "\"An artful scheme to relieve banks of their burdens\""
+    },
+    {
+      "puzzle_id": 70,
+      "three": "raw",
+      "four": "draw",
+      "five": "drawn",
+      "4hint": "\"Create art or decide a tie in sports\"",
+      "5hint": "\"Depicted with pencil or pulled towards something\""
+    },
+    {
+      "puzzle_id": 71,
+      "three": "arm",
+      "four": "warm",
+      "five": "swarm",
+      "4hint": "\"Cozy feeling on a chilly day\"",
+      "5hint": "\"Buzzing group that might make honey\""
+    },
+    {
+      "puzzle_id": 72,
+      "three": "men",
+      "four": "mean",
+      "five": "meant",
+      "4hint": "\"Synonym for unkind or average\"",
+      "5hint": "\"Intended outcome of a plan or action\""
+    },
+    {
+      "puzzle_id": 73,
+      "three": "far",
+      "four": "fair",
+      "five": "fairy",
+      "4hint": "\"Where rides, games, and cotton candy meet in a lively gathering.\"",
+      "5hint": "\"Winged creature of folklore, often grants wishes or sprinkles enchantment.\""
+    },
+    {
+      "puzzle_id": 74,
+      "three": "raw",
+      "four": "draw",
+      "five": "drawl",
+      "4hint": "\"Create with a pencil or end a game without a winner\"",
+      "5hint": "\"Slow Southern speech style often heard in cowboy tales\""
+    },
+    {
+      "puzzle_id": 75,
+      "three": "ear",
+      "four": "earn",
+      "five": "yearn",
+      "4hint": "\"Achieve this by putting in effort or time at work.\"",
+      "5hint": "\"Long for something with all your heart.\""
+    },
+    {
+      "puzzle_id": 76,
+      "three": "was",
+      "four": "wash",
+      "five": "awash",
+      "4hint": "\"Clean slate process with soap and water\"",
+      "5hint": "\"Completely covered, like a flood of emotions or water\""
+    },
+    {
+      "puzzle_id": 77,
+      "three": "and",
+      "four": "land",
+      "five": "bland",
+      "4hint": "\"Where planes aim to touch down\"",
+      "5hint": "\"Flavor profile that could use more spice\""
+    },
+    {
+      "puzzle_id": 78,
+      "three": "rod",
+      "four": "road",
+      "five": "broad",
+      "4hint": "\"Path where vehicles travel, often with signs and lines.\"",
+      "5hint": "\"Wide and spacious, like a boulevard or a smile.\""
+    },
+    {
+      "puzzle_id": 79,
+      "three": "the",
+      "four": "them",
+      "five": "theme",
+      "4hint": "\"Not us, but...\"",
+      "5hint": "\"Central idea of a song or story\""
+    },
+    {
+      "puzzle_id": 80,
+      "three": "one",
+      "four": "tone",
+      "five": "stone",
+      "4hint": "\"Musical quality or color in a sound's character.\"",
+      "5hint": "\"Rock-solid object often skipped across water\""
+    },
+    {
+      "puzzle_id": 81,
+      "three": "sin",
+      "four": "sing",
+      "five": "sling",
+      "4hint": "\"Express melodies without instruments using just your voice\"",
+      "5hint": "\"Device to support a broken arm\""
+    },
+    {
+      "puzzle_id": 82,
+      "three": "til",
+      "four": "till",
+      "five": "still",
+      "4hint": "\"Where cash rests in a store\"",
+      "5hint": "\"Silent yet unmoved, like a paused moment in time\""
+    },
+    {
+      "puzzle_id": 83,
+      "three": "lad",
+      "four": "land",
+      "five": "bland",
+      "4hint": "\"Where planes touch down and dreams take off\"",
+      "5hint": "\"Flavor profile that leaves taste buds unimpressed\""
+    },
+    {
+      "puzzle_id": 84,
+      "three": "rim",
+      "four": "grim",
+      "five": "grime",
+      "4hint": "\"A serious face, not a place for smiles\"",
+      "5hint": "\"Sticky stuff that soap loves to fight\""
+    },
+    {
+      "puzzle_id": 85,
+      "three": "red",
+      "four": "read",
+      "five": "ready",
+      "4hint": "\"Activity involving pages and imagination\"",
+      "5hint": "\"Prepared to begin at a moment's notice\""
+    },
+    {
+      "puzzle_id": 86,
+      "three": "all",
+      "four": "hall",
+      "five": "shall",
+      "4hint": "\"Where echoes follow footsteps indoors.\"",
+      "5hint": "\"Future's promise in five letters.\""
+    },
+    {
+      "puzzle_id": 87,
+      "three": "tin",
+      "four": "thin",
+      "five": "thing",
+      "4hint": "\"Lean like a supermodel or a slice of pizza\"",
+      "5hint": "\"An object or concept that's hard to define\""
+    },
+    {
+      "puzzle_id": 88,
+      "three": "any",
+      "four": "many",
+      "five": "mangy",
+      "4hint": "\"Abundance without counting, more than a few but less than a crowd.\"",
+      "5hint": "\"Shabby coat, like a neglected stray's fur.\""
+    },
+    {
+      "puzzle_id": 89,
+      "three": "hit",
+      "four": "hist",
+      "five": "hoist",
+      "4hint": "\"Quiet command from a librarian or actor\"",
+      "5hint": "\"Elevate with ropes and pulleys\""
+    },
+    {
+      "puzzle_id": 90,
+      "three": "bar",
+      "four": "bear",
+      "five": "beard",
+      "4hint": "\"Forest dweller known for its hibernation habits.\"",
+      "5hint": "\"Facial feature that's often styled or trimmed\""
+    },
+    {
+      "puzzle_id": 92,
+      "three": "sty",
+      "four": "stay",
+      "five": "stray",
+      "4hint": "\"Remain in one place when told to sit tight\"",
+      "5hint": "\"Lost but not forgotten, often found wandering off course.\""
+    },
+    {
+      "puzzle_id": 93,
+      "three": "lie",
+      "four": "live",
+      "five": "olive",
+      "4hint": "\"Opposite of recorded, often found on stage or TV\"",
+      "5hint": "\"Small, round, and often found in martinis or on pizza.\""
+    },
+    {
+      "puzzle_id": 94,
+      "three": "sal",
+      "four": "sale",
+      "five": "stale",
+      "4hint": "\"Event where prices take a dive\"",
+      "5hint": "\"Not fresh, like old bread or humor\""
+    },
+    {
+      "puzzle_id": 95,
+      "three": "sea",
+      "four": "seat",
+      "five": "sweat",
+      "4hint": "\"Where you rest your feet and take a load off.\"",
+      "5hint": "\"Drips down when the heat is on or during a workout\""
+    },
+    {
+      "puzzle_id": 96,
+      "three": "rig",
+      "four": "ring",
+      "five": "bring",
+      "4hint": "\"A circular token exchanged in lifelong commitments.\"",
+      "5hint": "\"Transport something to a new location or gathering\""
+    },
+    {
+      "puzzle_id": 97,
+      "three": "row",
+      "four": "grow",
+      "five": "grown",
+      "4hint": "\"Progression from seed to towering tree\"",
+      "5hint": "\"Matured from seed to full bloom\""
+    },
+    {
+      "puzzle_id": 98,
+      "three": "pay",
+      "four": "pray",
+      "five": "spray",
+      "4hint": "\"Whispered wishes sent skyward.\"",
+      "5hint": "\"Fine mist from a can or ocean's dance in the wind\""
+    },
+    {
+      "puzzle_id": 99,
+      "three": "toe",
+      "four": "tone",
+      "five": "atone",
+      "4hint": "\"Musical quality or a phone's ring\"",
+      "5hint": "\"Make amends for past mistakes\""
+    },
+    {
+      "puzzle_id": 100,
+      "three": "way",
+      "four": "wary",
+      "five": "warty",
+      "4hint": "\"Feeling when crossing a rickety bridge\"",
+      "5hint": "\"Bumpy like a toad's skin.\""
+    }
+  ] 

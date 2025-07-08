@@ -1,0 +1,11 @@
+---
+alwaysApply: true
+---
+This is a kotlin multi platform project with multiplatform settings.
+
+use coomonMain folder for common code and mostly use that if something that is specific to OS then only move to different folder.
+
+use class based architecture for multiplatform project.
+do not create muliple class in single file.
+use data class for data model.
+create a scaleable model and architecture.
