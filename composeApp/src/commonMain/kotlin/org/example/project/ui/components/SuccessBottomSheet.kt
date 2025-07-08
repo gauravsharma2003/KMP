@@ -112,25 +112,63 @@ fun SuccessBottomSheet(
                         shape = RoundedCornerShape(16.dp)
                     ) {
                         Column(
-                            modifier = Modifier.padding(16.dp),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(16.dp),
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
                             Text(
                                 text = "Puzzle $currentPuzzle of $totalPuzzles",
                                 fontSize = 12.sp,
                                 color = Color(0xFF9CA3AF),
-                                textAlign = TextAlign.Center
+                                textAlign = TextAlign.Center,
+                                modifier = Modifier.fillMaxWidth()
                             )
                             
                             Spacer(modifier = Modifier.height(8.dp))
                             
-                            Text(
-                                text = "${puzzle.three.uppercase()} → ${puzzle.four.uppercase()} → ${puzzle.five.uppercase()}",
-                                fontSize = 20.sp,
-                                fontWeight = FontWeight.Bold,
-                                color = Color.White,
-                                textAlign = TextAlign.Center
-                            )
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.Center,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Text(
+                                    text = puzzle.three.uppercase(),
+                                    fontSize = 20.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color(0xFF10B981)
+                                )
+                                
+                                Text(
+                                    text = " → ",
+                                    fontSize = 20.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color(0xFF9CA3AF),
+                                    modifier = Modifier.padding(horizontal = 8.dp)
+                                )
+                                
+                                Text(
+                                    text = puzzle.four.uppercase(),
+                                    fontSize = 20.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color(0xFF3B82F6)
+                                )
+                                
+                                Text(
+                                    text = " → ",
+                                    fontSize = 20.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color(0xFF9CA3AF),
+                                    modifier = Modifier.padding(horizontal = 8.dp)
+                                )
+                                
+                                Text(
+                                    text = puzzle.five.uppercase(),
+                                    fontSize = 20.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color.White
+                                )
+                            }
                             
                             Spacer(modifier = Modifier.height(8.dp))
                             
@@ -139,7 +177,8 @@ fun SuccessBottomSheet(
                                 fontSize = 14.sp,
                                 color = Color(0xFF10B981),
                                 fontWeight = FontWeight.Medium,
-                                textAlign = TextAlign.Center
+                                textAlign = TextAlign.Center,
+                                modifier = Modifier.fillMaxWidth()
                             )
                         }
                     }
