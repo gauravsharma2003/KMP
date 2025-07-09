@@ -23,6 +23,7 @@ import org.example.project.data.PuzzleData
 import org.example.project.data.PuzzleLoader
 import org.example.project.game.GameState
 import org.example.project.ui.components.ActionButtons
+import org.example.project.ui.components.CustomKeyboard
 import org.example.project.ui.components.LetterBox
 import org.example.project.ui.components.SuccessBottomSheet
 
@@ -143,20 +144,10 @@ fun WordPyramidScreen() {
             
             Spacer(modifier = Modifier.weight(1f))
             
-            // Instructions for system keyboard
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                colors = CardDefaults.cardColors(containerColor = Color(0xFF1A1A1A)),
-                shape = RoundedCornerShape(12.dp)
-            ) {
-                Text(
-                    text = "Use your device keyboard to type letters • Backspace to delete • Enter to check",
-                    color = Color(0xFF9CA3AF),
-                    fontSize = 14.sp,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.padding(16.dp)
-                )
-            }
+            // Custom Keyboard at bottom
+            CustomKeyboard(
+                onKeyPress = { key -> gameState.handleKeyPress(key) }
+            )
         }
         
         // Success Bottom Sheet
