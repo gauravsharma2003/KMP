@@ -22,18 +22,17 @@ import androidx.compose.ui.unit.sp
 fun LetterBox(
     letter: String,
     isActive: Boolean = false,
-    isHinted: Boolean = false,
+    isRevealed: Boolean = false,
     isCompleted: Boolean = false,
-    isCorrect: Boolean = false,
     modifier: Modifier = Modifier
 ) {
     val backgroundColor by animateColorAsState(
         targetValue = when {
-            isCompleted -> Color(0xFF10B981) // Green
-            isHinted -> Color(0xFFFBBF24) // Yellow
-            isActive -> Color(0xFF3B82F6) // Blue
-            isCorrect -> Color(0xFF10B981) // Green
-            else -> Color(0xFF1A1A1A) // Dark gray
+            isCompleted -> Color(0xFF10B981) // Green for completed words
+            isRevealed -> Color(0xFFFBBF24) // Yellow for revealed hints
+            isActive -> Color(0xFF3B82F6) // Blue for current input position
+            letter.isNotEmpty() -> Color(0xFF374151) // Dark gray for user input
+            else -> Color(0xFF1A1A1A) // Darker gray for empty
         },
         animationSpec = spring(
             dampingRatio = Spring.DampingRatioMediumBouncy,
@@ -44,10 +43,10 @@ fun LetterBox(
     val borderColor by animateColorAsState(
         targetValue = when {
             isCompleted -> Color(0xFF10B981) // Green
-            isHinted -> Color(0xFFFBBF24) // Yellow
+            isRevealed -> Color(0xFFFBBF24) // Yellow
             isActive -> Color(0xFF3B82F6) // Blue
-            isCorrect -> Color(0xFF10B981) // Green
-            else -> Color(0xFF4B5563) // Gray
+            letter.isNotEmpty() -> Color(0xFF6B7280) // Medium gray for user input
+            else -> Color(0xFF4B5563) // Gray for empty
         },
         animationSpec = spring(
             dampingRatio = Spring.DampingRatioMediumBouncy,
@@ -58,9 +57,8 @@ fun LetterBox(
     val textColor by animateColorAsState(
         targetValue = when {
             isCompleted -> Color.White
-            isHinted -> Color.Black
+            isRevealed -> Color.Black // Black text on yellow background
             isActive -> Color.White
-            isCorrect -> Color.White
             letter.isNotEmpty() -> Color.White
             else -> Color(0xFF9CA3AF) // Light gray for empty
         },

@@ -1,18 +1,58 @@
 package org.example.project.data
 
-import kotlinx.serialization.json.Json
-import org.jetbrains.compose.resources.ExperimentalResourceApi
-import takeitezzyy.composeapp.generated.resources.Res
-
 class PuzzleLoader {
-    @OptIn(ExperimentalResourceApi::class)
-    suspend fun loadPuzzles(): List<PuzzleData> {
-        return try {
-            val jsonString = Res.readBytes("files/PyramidPuzzle.json").decodeToString()
-            Json.decodeFromString<List<PuzzleData>>(jsonString)
-        } catch (e: Exception) {
-            println("Error loading puzzles: ${e.message}")
-            emptyList()
-        }
+    fun loadPuzzles(): List<PuzzleData> {
+        return listOf(
+            PuzzleData(1, "ten", "tend", "trend", "Care for a garden or a helping hand", "Fashion's fleeting favorite or a hot topic on social media."),
+            PuzzleData(2, "fat", "flat", "float", "Level ground where a ball won't roll away", "Bob on water like a carefree cork"),
+            PuzzleData(3, "cat", "cast", "coast", "Actors rehearse to perfect this ensemble action.", "Where the land gently kisses the sea."),
+            PuzzleData(4, "far", "fair", "flair", "Where justice wears a balanced scale", "Natural talent that adds a touch of pizzazz"),
+            PuzzleData(5, "log", "long", "along", "Measured in miles, not inches", "Beside you on a journey, side by side."),
+            PuzzleData(6, "ooh", "pooh", "pooch", "Bear that loves honey and resides in the Hundred Acre Wood.", "Furry friend wagging its tail on a walk"),
+            PuzzleData(7, "ear", "rear", "rearm", "Where a car's taillights are found", "Prepare anew for battle or defense."),
+            PuzzleData(8, "ate", "late", "latte", "After the clock strikes, you might be this for a meeting.", "Coffee's frothy companion, often artfully decorated."),
+            PuzzleData(9, "sin", "sing", "swing", "Express yourself with melody and lyrics.", "Where playgrounds meet rhythm and motion"),
+            PuzzleData(10, "ire", "fire", "afire", "Hot element that dances and crackles in a hearth", "Engulfed in flames, burning brightly"),
+            PuzzleData(11, "fee", "free", "freed", "Costless, like a bird released from its cage", "Released from chains or constraints"),
+            PuzzleData(12, "led", "lead", "plead", "Heavy metal that guides the way", "Begging for mercy in a courtroom drama"),
+            PuzzleData(13, "use", "user", "usher", "One who logs in to navigate the digital world", "Guide who leads you to your seat at events"),
+            PuzzleData(14, "pin", "pain", "plain", "A four-letter word that often follows 'growing'", "Where the buffalo roam and the sky stretches wide"),
+            PuzzleData(15, "yea", "year", "yearn", "365 days in a row", "Long for something with deep desire."),
+            PuzzleData(16, "par", "park", "parka", "Place where cars rest or kids play", "Cozy outerwear for snowball fights and icy winds"),
+            PuzzleData(17, "pan", "pain", "paint", "What you might feel after a stubbed toe.", "Colorful coat for walls or canvas"),
+            PuzzleData(18, "men", "mean", "meant", "Unkind or average, depends on context!", "Destined or intended, but not said aloud"),
+            PuzzleData(19, "eat", "east", "yeast", "Where the sun rises in the morning sky", "Baker's secret to rising success"),
+            PuzzleData(20, "sue", "sure", "surer", "Confident answer often paired with 'thing'", "More confident than before, but not the most."),
+            PuzzleData(21, "are", "rare", "rarer", "A steak cooked just past mooing.", "Less common than its counterpart, often sought in steak orders."),
+            PuzzleData(22, "all", "tall", "tally", "Reaches for the sky, much like a giraffe.", "Keep track of points or scores with this counting method."),
+            PuzzleData(23, "ail", "fail", "flail", "Opposite of succeed in a task or test", "Wildly wave your arms like you're trying to fly"),
+            PuzzleData(24, "god", "good", "goody", "Opposite of bad, often used to describe a moral action or quality", "Treat often found in a party bag or a grandma's jar."),
+            PuzzleData(25, "hem", "them", "theme", "Pronoun for a group not including you", "Central idea of a party or story"),
+            PuzzleData(26, "tam", "team", "steam", "Together Everyone Achieves More", "Rising mist from a boiling pot"),
+            PuzzleData(27, "ted", "tend", "trend", "Care for or look after something with attention", "Popular direction in fashion or social media"),
+            PuzzleData(28, "ten", "tend", "trend", "Care for a garden or a wound", "What's hot and often set by influencers?"),
+            PuzzleData(29, "wit", "wait", "waist", "Time's companion when patience is tested", "The part you cinch with a belt"),
+            PuzzleData(30, "she", "shed", "shied", "Where tools find shelter and secrets are stored.", "Stepped back in hesitation or fear"),
+            PuzzleData(31, "par", "part", "party", "Role in a play or a piece of the whole", "Festive gathering with music, friends, and cake."),
+            PuzzleData(32, "tam", "team", "steam", "Group that achieves more together than alone", "Hot mist rising from your morning cup"),
+            PuzzleData(33, "elf", "self", "shelf", "Reflected in the mirror, but not a twin.", "Where books find a resting place"),
+            PuzzleData(34, "how", "show", "shown", "Where actors take the stage and curtains rise", "Revealed to the audience, like a movie on a screen"),
+            PuzzleData(35, "ice", "nice", "niece", "Four-letter adjective for being pleasant or kind.", "Sister's daughter, often a favorite at family gatherings"),
+            PuzzleData(36, "hat", "what", "wheat", "Word that starts questions seeking answers", "Grain often found in fields and on your breakfast table."),
+            PuzzleData(37, "cod", "cold", "could", "Chilly feeling when you need a sweater", "Potential action hiding in a polite question"),
+            PuzzleData(38, "coo", "cook", "crook", "Transform raw ingredients into a delicious masterpiece", "A bent stick or a shady character."),
+            PuzzleData(39, "pat", "part", "apart", "A piece of the whole puzzle.", "Separated like puzzle pieces before they fit together"),
+            PuzzleData(40, "buy", "busy", "bushy", "Juggling tasks like a circus performer", "Thick and full, like a squirrel's tail or a dense garden."),
+            PuzzleData(41, "dad", "dead", "dread", "Not alive, but still remembered in stories", "Feeling before a horror movie starts."),
+            PuzzleData(42, "fir", "fair", "fairy", "A place for rides, games, and cotton candy delight.", "Magical creature with wings, often found in enchanted forests."),
+            PuzzleData(43, "rat", "rate", "grate", "How you might score a movie out of ten", "Tool that shreds cheese to bits"),
+            PuzzleData(44, "men", "mean", "meant", "Intentions behind actions, or a math average", "Intended outcome of a plan or statement"),
+            PuzzleData(45, "use", "user", "usher", "One who logs into a digital world", "Guides you to your seat at a theater"),
+            PuzzleData(46, "any", "many", "manly", "Infinite grains in a desert", "Strong and rugged like a lumberjack's handshake."),
+            PuzzleData(47, "tee", "tree", "three", "Nature's skyscraper with branches and leaves", "A trio typically forms this number."),
+            PuzzleData(48, "act", "fact", "facet", "Undeniable truth or detail, often checked by journalists.", "One side of a gem's story"),
+            PuzzleData(49, "ore", "fore", "force", "Shouted warning on a golf course", "May the _____ be with you, as in a famous sci-fi saga."),
+            PuzzleData(50, "tea", "team", "steam", "Group effort makes the dream work", "Hot mist that powers old locomotives")
+        )
     }
 } 
