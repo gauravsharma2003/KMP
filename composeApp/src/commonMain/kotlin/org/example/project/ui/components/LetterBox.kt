@@ -1,8 +1,7 @@
 package org.example.project.ui.components
 
 import androidx.compose.animation.animateColorAsState
-import androidx.compose.animation.core.Spring
-import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
@@ -12,7 +11,10 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.drawscope.DrawScope
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -24,8 +26,29 @@ fun LetterBox(
     isActive: Boolean = false,
     isRevealed: Boolean = false,
     isCompleted: Boolean = false,
+    shouldGlow: Boolean = false,
     modifier: Modifier = Modifier
 ) {
+    // Glow animation
+    val infiniteTransition = rememberInfiniteTransition()
+    val glowAlpha by infiniteTransition.animateFloat(
+        initialValue = 0f,
+        targetValue = if (shouldGlow) 0.8f else 0f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(600, easing = EaseInOutSine),
+            repeatMode = RepeatMode.Reverse
+        )
+    )
+    
+    val glowSize by infiniteTransition.animateFloat(
+        initialValue = 0f,
+        targetValue = if (shouldGlow) 8f else 0f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(600, easing = EaseInOutSine),
+            repeatMode = RepeatMode.Reverse
+        )
+    )
+
     val backgroundColor by animateColorAsState(
         targetValue = when {
             isCompleted -> Color(0xFF10B981) // Green for completed words
@@ -68,9 +91,31 @@ fun LetterBox(
         )
     )
     
+    // Scale animation for emphasis
+    val scale by animateFloatAsState(
+        targetValue = if (shouldGlow) 1.1f else 1f,
+        animationSpec = spring(
+            dampingRatio = Spring.DampingRatioMediumBouncy,
+            stiffness = Spring.StiffnessMedium
+        )
+    )
+    
     Box(
         modifier = modifier
             .size(48.dp)
+            .graphicsLayer {
+                scaleX = scale
+                scaleY = scale
+            }
+            .drawBehind {
+                if (shouldGlow) {
+                    drawGlowEffect(
+                        glowColor = Color(0xFF10B981),
+                        alpha = glowAlpha,
+                        glowSize = glowSize
+                    )
+                }
+            }
             .clip(RoundedCornerShape(12.dp))
             .background(backgroundColor)
             .border(
@@ -88,4 +133,28 @@ fun LetterBox(
             textAlign = TextAlign.Center
         )
     }
+}
+
+private fun DrawScope.drawGlowEffect(
+    glowColor: Color,
+    alpha: Float,
+    glowSize: Float
+) {
+    val centerX = size.width / 2
+    val centerY = size.height / 2
+    val radius = (size.minDimension / 2) + glowSize
+    
+    // Outer glow
+    drawCircle(
+        color = glowColor.copy(alpha = alpha * 0.3f),
+        radius = radius * 1.2f,
+        center = androidx.compose.ui.geometry.Offset(centerX, centerY)
+    )
+    
+    // Inner glow
+    drawCircle(
+        color = glowColor.copy(alpha = alpha * 0.6f),
+        radius = radius,
+        center = androidx.compose.ui.geometry.Offset(centerX, centerY)
+    )
 } 

@@ -185,7 +185,8 @@ private fun WordPyramid(
                     letter = letter.toString(),
                     isActive = false,
                     isRevealed = true,
-                    isCompleted = true
+                    isCompleted = true,
+                    shouldGlow = false
                 )
             }
         }
@@ -198,6 +199,8 @@ private fun WordPyramid(
             val hints4 = gameState.state.permanentHints4
             val isWord4Active = !gameState.isCurrentStep2
             val isWord4Complete = gameState.isWord4Complete
+            val glowingLetters4 = gameState.state.glowingLetters4
+            val word4Glowing = gameState.state.word4Glowing
             
             repeat(4) { index ->
                 val letter = when {
@@ -206,11 +209,14 @@ private fun WordPyramid(
                     else -> ""
                 }
                 
+                val shouldGlow = word4Glowing || index in glowingLetters4
+                
                 LetterBox(
                     letter = letter,
                     isActive = isWord4Active && index == word4Input.length && hints4[index].isEmpty(),
                     isRevealed = hints4[index].isNotEmpty(),
-                    isCompleted = isWord4Complete
+                    isCompleted = isWord4Complete,
+                    shouldGlow = shouldGlow
                 )
             }
         }
@@ -223,6 +229,8 @@ private fun WordPyramid(
             val hints5 = gameState.state.permanentHints5
             val isWord5Active = gameState.isCurrentStep2
             val isWord5Complete = gameState.isWord5Complete
+            val glowingLetters5 = gameState.state.glowingLetters5
+            val word5Glowing = gameState.state.word5Glowing
             
             repeat(5) { index ->
                 val letter = when {
@@ -231,11 +239,14 @@ private fun WordPyramid(
                     else -> ""
                 }
                 
+                val shouldGlow = word5Glowing || index in glowingLetters5
+                
                 LetterBox(
                     letter = letter,
                     isActive = isWord5Active && index == word5Input.length && hints5[index].isEmpty(),
                     isRevealed = hints5[index].isNotEmpty(),
-                    isCompleted = isWord5Complete
+                    isCompleted = isWord5Complete,
+                    shouldGlow = shouldGlow
                 )
             }
         }
@@ -254,20 +265,21 @@ private fun HintText(
     ) {
         Column(
             modifier = Modifier.padding(16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.Start
         ) {
             Text(
-                text = "${if (currentStep == 1) "4" else "5"}-letter word hint:",
+                text = "Add one letter to make the word:",
                 fontSize = 14.sp,
                 color = Color(0xFF9CA3AF),
-                fontWeight = FontWeight.Medium
+                fontWeight = FontWeight.Medium,
+                textAlign = TextAlign.Left
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = if (currentStep == 1) puzzle.hint4 else puzzle.hint5,
                 fontSize = 16.sp,
                 color = Color.White,
-                textAlign = TextAlign.Center,
+                textAlign = TextAlign.Left,
                 lineHeight = 24.sp
             )
         }

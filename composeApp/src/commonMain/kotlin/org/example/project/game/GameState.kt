@@ -3,6 +3,10 @@ package org.example.project.game
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import org.example.project.data.PuzzleData
 
 enum class GameStep {
@@ -19,11 +23,17 @@ data class GameLogicState(
     val permanentHints4: List<String> = List(4) { "" },
     val permanentHints5: List<String> = List(5) { "" },
     val completedPuzzles: Int = 0,
-    val shuffledPuzzles: List<PuzzleData> = emptyList()
+    val shuffledPuzzles: List<PuzzleData> = emptyList(),
+    // Animation states
+    val glowingLetters4: Set<Int> = emptySet(),
+    val glowingLetters5: Set<Int> = emptySet(),
+    val word4Glowing: Boolean = false,
+    val word5Glowing: Boolean = false
 )
 
 class GameState {
     private var _state by mutableStateOf(GameLogicState())
+    private val animationScope = CoroutineScope(Dispatchers.Main)
     
     // Public read-only access to state
     val state: GameLogicState get() = _state
@@ -130,19 +140,63 @@ class GameState {
         when (_state.currentStep) {
             GameStep.WORD_4 -> {
                 if (isWord4Complete) {
-                    _state = _state.copy(currentStep = GameStep.WORD_5)
+                    triggerWordCompletionAnimation(false)
+                    animationScope.launch {
+                        delay(1000) // Show animation for 1 second
+                        _state = _state.copy(
+                            currentStep = GameStep.WORD_5,
+                            word4Glowing = false
+                        )
+                    }
                 }
             }
             GameStep.WORD_5 -> {
                 if (isWord5Complete) {
-                    _state = _state.copy(
-                        currentStep = GameStep.PUZZLE_COMPLETED,
-                        completedPuzzles = _state.completedPuzzles + 1
-                    )
+                    triggerWordCompletionAnimation(true)
+                    animationScope.launch {
+                        delay(1000) // Show animation for 1 second
+                        _state = _state.copy(
+                            currentStep = GameStep.PUZZLE_COMPLETED,
+                            completedPuzzles = _state.completedPuzzles + 1,
+                            word5Glowing = false
+                        )
+                    }
                 }
             }
             GameStep.PUZZLE_COMPLETED -> {
                 // Already completed, waiting for next puzzle
+            }
+        }
+    }
+    
+    private fun triggerWordCompletionAnimation(isStep2: Boolean) {
+        _state = if (isStep2) {
+            _state.copy(word5Glowing = true)
+        } else {
+            _state.copy(word4Glowing = true)
+        }
+    }
+    
+    private fun triggerLetterRevealAnimation(letterIndex: Int, isStep2: Boolean) {
+        val currentGlowing = if (isStep2) _state.glowingLetters5 else _state.glowingLetters4
+        val newGlowing = currentGlowing + letterIndex
+        
+        _state = if (isStep2) {
+            _state.copy(glowingLetters5 = newGlowing)
+        } else {
+            _state.copy(glowingLetters4 = newGlowing)
+        }
+        
+        // Remove glow after animation
+        animationScope.launch {
+            delay(1500) // Show letter glow for 1.5 seconds
+            val updatedGlowing = if (isStep2) _state.glowingLetters5 else _state.glowingLetters4
+            val finalGlowing = updatedGlowing - letterIndex
+            
+            _state = if (isStep2) {
+                _state.copy(glowingLetters5 = finalGlowing)
+            } else {
+                _state.copy(glowingLetters4 = finalGlowing)
             }
         }
     }
@@ -173,7 +227,11 @@ class GameState {
             word4Input = "",
             word5Input = "",
             permanentHints4 = List(4) { "" },
-            permanentHints5 = List(5) { "" }
+            permanentHints5 = List(5) { "" },
+            glowingLetters4 = emptySet(),
+            glowingLetters5 = emptySet(),
+            word4Glowing = false,
+            word5Glowing = false
         )
     }
     
@@ -193,6 +251,9 @@ class GameState {
                 } else {
                     _state.copy(permanentHints4 = newHints)
                 }
+                
+                // Trigger letter reveal animation
+                triggerLetterRevealAnimation(i, isStep2)
                 break
             }
         }
@@ -213,6 +274,11 @@ class GameState {
                 currentStep = GameStep.PUZZLE_COMPLETED,
                 completedPuzzles = _state.completedPuzzles + 1
             )
+            triggerWordCompletionAnimation(true)
+            animationScope.launch {
+                delay(1000)
+                _state = _state.copy(word5Glowing = false)
+            }
         } else {
             // Reveal 4-letter word and move to 5-letter word
             _state = _state.copy(
@@ -220,6 +286,11 @@ class GameState {
                 permanentHints4 = List(4) { "" },
                 currentStep = GameStep.WORD_5
             )
+            triggerWordCompletionAnimation(false)
+            animationScope.launch {
+                delay(1000)
+                _state = _state.copy(word4Glowing = false)
+            }
         }
     }
 } 
