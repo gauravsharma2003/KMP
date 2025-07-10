@@ -31,11 +31,12 @@ fun ActionButtons(
                 containerColor = Color(0xFFFBBF24),
                 contentColor = Color.Black
             ),
-            shape = RoundedCornerShape(12.dp)
+            shape = RoundedCornerShape(12.dp),
+            contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp)
         ) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
+                verticalArrangement = Arrangement.spacedBy(2.dp, Alignment.CenterVertically)
             ) {
                 Text(
                     text = "💡",
@@ -59,11 +60,12 @@ fun ActionButtons(
                 containerColor = Color(0xFF3B82F6),
                 contentColor = Color.White
             ),
-            shape = RoundedCornerShape(12.dp)
+            shape = RoundedCornerShape(12.dp),
+            contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp)
         ) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
+                verticalArrangement = Arrangement.spacedBy(2.dp, Alignment.CenterVertically)
             ) {
                 Text(
                     text = "👁️",
@@ -87,11 +89,12 @@ fun ActionButtons(
                 containerColor = Color(0xFFDC2626),
                 contentColor = Color.White
             ),
-            shape = RoundedCornerShape(12.dp)
+            shape = RoundedCornerShape(12.dp),
+            contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp)
         ) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
+                verticalArrangement = Arrangement.spacedBy(2.dp, Alignment.CenterVertically)
             ) {
                 Text(
                     text = "🔄",
@@ -115,11 +118,12 @@ fun ActionButtons(
                 containerColor = Color(0xFF10B981),
                 contentColor = Color.White
             ),
-            shape = RoundedCornerShape(12.dp)
+            shape = RoundedCornerShape(12.dp),
+            contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp)
         ) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
+                verticalArrangement = Arrangement.spacedBy(2.dp, Alignment.CenterVertically)
             ) {
                 Text(
                     text = "➡️",
