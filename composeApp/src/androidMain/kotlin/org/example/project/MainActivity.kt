@@ -12,7 +12,7 @@ import androidx.activity.SystemBarStyle
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge(
-            statusBarStyle = SystemBarStyle.dark(
+            statusBarStyle = SystemBarStyle.dark(       
                 Color.parseColor("#ffffff")
             ),
             navigationBarStyle = SystemBarStyle.dark(
