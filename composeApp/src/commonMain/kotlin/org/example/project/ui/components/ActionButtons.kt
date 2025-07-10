@@ -39,12 +39,14 @@ fun ActionButtons(
             ) {
                 Text(
                     text = "💡",
-                    fontSize = 16.sp
+                    fontSize = 12.sp,
+                    maxLines = 1
                 )
                 Text(
                     text = "Hint",
                     fontSize = 12.sp,
-                    fontWeight = FontWeight.Medium
+                    fontWeight = FontWeight.Medium,
+                    maxLines = 1
                 )
             }
         }
@@ -65,12 +67,14 @@ fun ActionButtons(
             ) {
                 Text(
                     text = "👁️",
-                    fontSize = 16.sp
+                    fontSize = 12.sp,
+                    maxLines = 1
                 )
                 Text(
                     text = "Reveal",
                     fontSize = 12.sp,
-                    fontWeight = FontWeight.Medium
+                    fontWeight = FontWeight.Medium,
+                    maxLines = 1
                 )
             }
         }
@@ -91,12 +95,14 @@ fun ActionButtons(
             ) {
                 Text(
                     text = "🔄",
-                    fontSize = 16.sp
+                    fontSize = 12.sp,
+                    maxLines = 1
                 )
                 Text(
                     text = "Reset",
                     fontSize = 12.sp,
-                    fontWeight = FontWeight.Medium
+                    fontWeight = FontWeight.Medium,
+                    maxLines = 1
                 )
             }
         }
@@ -117,12 +123,14 @@ fun ActionButtons(
             ) {
                 Text(
                     text = "➡️",
-                    fontSize = 16.sp
+                    fontSize = 12.sp,
+                    maxLines = 1
                 )
                 Text(
                     text = "Next",
                     fontSize = 12.sp,
-                    fontWeight = FontWeight.Medium
+                    fontWeight = FontWeight.Medium,
+                    maxLines = 1
                 )
             }
         }
