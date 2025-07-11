@@ -1,9 +1,12 @@
 package org.example.project.ui
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -22,10 +25,10 @@ import org.example.project.ui.components.*
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun WordPyramidScreen() {
+fun WordPyramidScreen(onBackClicked: () -> Unit) {
     val gameState = remember { GameState() }
     val puzzleLoader = remember { PuzzleLoader() }
-    
+
     // Initialize puzzles on first composition
     remember {
         val puzzles = puzzleLoader.loadPuzzles()
@@ -33,7 +36,7 @@ fun WordPyramidScreen() {
     }
 
     val currentPuzzle = gameState.currentPuzzle
-    
+
     if (currentPuzzle == null) {
         Box(
             modifier = Modifier
@@ -49,81 +52,104 @@ fun WordPyramidScreen() {
         }
         return
     }
-    
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color(0xFF0A0A0A))
-            .focusable()
-            .onKeyEvent { keyEvent ->
-                if (keyEvent.type == KeyEventType.KeyDown) {
-                    handleKeyInput(keyEvent, gameState)
-                } else false
-            }
-    ) {
-        Column(
+
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text("Word Pyramid") },
+                navigationIcon = {
+                    IconButton(onClick = onBackClicked) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                            contentDescription = "Back"
+                        )
+                    }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = Color(0xFF1a1a1a),
+                    titleContentColor = Color.White,
+                    navigationIconContentColor = Color.White
+                )
+            )
+        },
+        containerColor = Color(0xFF0A0A0A)
+    ) { paddingValues ->
+        Box(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+                .padding(paddingValues)
+                .background(Color(0xFF0A0A0A))
+                .focusable()
+                .onKeyEvent { keyEvent ->
+                    if (keyEvent.type == KeyEventType.KeyDown) {
+                        handleKeyInput(keyEvent, gameState)
+                    } else false
+                }
         ) {
-            // Header (simplified without branding)
-            GameHeader(
-                currentPuzzle = gameState.state.currentPuzzleIndex + 1,
-                totalPuzzles = gameState.state.shuffledPuzzles.size,
-                completedPuzzles = gameState.state.completedPuzzles
-            )
-            
-            Spacer(modifier = Modifier.height(32.dp))
-            
-            // Word Pyramid
-            WordPyramid(
-                puzzle = currentPuzzle,
-                gameState = gameState
-            )
-            
-            Spacer(modifier = Modifier.height(24.dp))
-            
-            // Hint Text
-            HintText(
-                puzzle = currentPuzzle,
-                currentStep = gameState.currentStepNumber
-            )
-            
-            Spacer(modifier = Modifier.height(16.dp))
-            
-            // Action Buttons
-            ActionButtons(
-                onHint = { gameState.getHint(gameState.isCurrentStep2) },
-                onReveal = { gameState.revealAnswer(gameState.isCurrentStep2) },
-                onReset = { gameState.resetPuzzle() },
-                onNext = { gameState.nextPuzzle() }
-            )
-            
-            Spacer(modifier = Modifier.weight(1f))
-            
-            // Custom Keyboard at bottom
-            CustomKeyboard(
-                onKeyPress = { key -> gameState.handleKeyPress(key) }
-            )
-        }
-        
-        // Success Bottom Sheet - driven by game logic
-        if (gameState.shouldShowSuccess) {
-            SuccessBottomSheet(
-                puzzle = currentPuzzle,
-                currentPuzzle = gameState.state.currentPuzzleIndex + 1,
-                totalPuzzles = gameState.state.shuffledPuzzles.size,
-                completedPuzzles = gameState.state.completedPuzzles,
-                onNext = { gameState.nextPuzzle() }
-            )
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                // Header (simplified without branding)
+                GameHeader(
+                    currentPuzzle = gameState.state.currentPuzzleIndex + 1,
+                    totalPuzzles = gameState.state.shuffledPuzzles.size,
+                    completedPuzzles = gameState.state.completedPuzzles
+                )
+
+                Spacer(modifier = Modifier.height(32.dp))
+
+                // Word Pyramid
+                WordPyramid(
+                    puzzle = currentPuzzle,
+                    gameState = gameState
+                )
+
+                Spacer(modifier = Modifier.height(24.dp))
+
+                // Hint Text
+                HintText(
+                    puzzle = currentPuzzle,
+                    currentStep = gameState.currentStepNumber
+                )
+
+                Spacer(modifier = Modifier.height(16.dp))
+
+                // Action Buttons
+                ActionButtons(
+                    onHint = { gameState.getHint(gameState.isCurrentStep2) },
+                    onReveal = { gameState.revealAnswer(gameState.isCurrentStep2) },
+                    onReset = { gameState.resetPuzzle() },
+                    onNext = { gameState.nextPuzzle() }
+                )
+
+                Spacer(modifier = Modifier.weight(1f))
+
+                // Custom Keyboard at bottom
+                CustomKeyboard(
+                    onKeyPress = { key -> gameState.handleKeyPress(key) }
+                )
+            }
+
+            // Success Bottom Sheet - driven by game logic
+            if (gameState.shouldShowSuccess) {
+                SuccessBottomSheet(
+                    puzzle = currentPuzzle,
+                    currentPuzzle = gameState.state.currentPuzzleIndex + 1,
+                    totalPuzzles = gameState.state.shuffledPuzzles.size,
+                    completedPuzzles = gameState.state.completedPuzzles,
+                    onNext = { gameState.nextPuzzle() }
+                )
+            }
         }
     }
 }
 
 private fun handleKeyInput(keyEvent: KeyEvent, gameState: GameState): Boolean {
     val key = keyEvent.key
-    
+
     return when {
         key == Key.Backspace -> {
             gameState.handleKeyPress("DEL")
@@ -190,7 +216,7 @@ private fun WordPyramid(
                 )
             }
         }
-        
+
         // Middle row - 4-letter word
         Row(
             horizontalArrangement = Arrangement.spacedBy(8.dp)
@@ -201,16 +227,16 @@ private fun WordPyramid(
             val isWord4Complete = gameState.isWord4Complete
             val glowingLetters4 = gameState.state.glowingLetters4
             val word4Glowing = gameState.state.word4Glowing
-            
+
             repeat(4) { index ->
                 val letter = when {
                     hints4[index].isNotEmpty() -> hints4[index]
                     index < word4Input.length -> word4Input[index].toString()
                     else -> ""
                 }
-                
+
                 val shouldGlow = word4Glowing || index in glowingLetters4
-                
+
                 LetterBox(
                     letter = letter,
                     isActive = isWord4Active && index == word4Input.length && hints4[index].isEmpty(),
@@ -220,7 +246,7 @@ private fun WordPyramid(
                 )
             }
         }
-        
+
         // Bottom row - 5-letter word
         Row(
             horizontalArrangement = Arrangement.spacedBy(8.dp)
@@ -231,16 +257,16 @@ private fun WordPyramid(
             val isWord5Complete = gameState.isWord5Complete
             val glowingLetters5 = gameState.state.glowingLetters5
             val word5Glowing = gameState.state.word5Glowing
-            
+
             repeat(5) { index ->
                 val letter = when {
                     hints5[index].isNotEmpty() -> hints5[index]
                     index < word5Input.length -> word5Input[index].toString()
                     else -> ""
                 }
-                
+
                 val shouldGlow = word5Glowing || index in glowingLetters5
-                
+
                 LetterBox(
                     letter = letter,
                     isActive = isWord5Active && index == word5Input.length && hints5[index].isEmpty(),

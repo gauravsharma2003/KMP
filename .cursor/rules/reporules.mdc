@@ -9,3 +9,11 @@ use class based architecture for multiplatform project.
 do not create muliple class in single file.
 use data class for data model.
 create a scaleable model and architecture.
+one class should have one responsibility and one function.
+the UI should be dumb and it should act according to the logic.
+use uncle bob principle:
+ 1. Single Responsibility Principle (SRP): Each class should have only one reason to change, meaning it should only have one job or responsibility.
+ 2. Open/Closed Principle (OCP): Software entities like classes and functions should be open for extension but closed for modification. This means you should be able to add new features without changing existing code.
+ 3. Liskov Substitution Principle (LSP): Objects of a base class should be able to be replaced with objects of a derived class without affecting the correctness of the program.
+ 4. Interface Segregation Principle (ISP): No client should be forced to depend on interfaces it does not use. It is better to have many small, specific interfaces than one large, general-purpose interface.
+ 5. Dependency Inversion Principle (DIP): High-level modules should not depend on low-level modules. Both should depend on abstractions, not on concrete implementations.
